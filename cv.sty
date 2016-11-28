@@ -1,0 +1,90 @@
+\usepackage[hmargin=1.25cm,vmargin=1.25cm]{geometry}
+\usepackage{bookman}
+\usepackage[T1]{fontenc}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+\usepackage{marvosym}
+% \usepackage{needspace}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\definecolor{link}{HTML}{506060} % Hyperlinks
+\hypersetup{colorlinks,breaklinks,urlcolor=link,linkcolor=link}
+\setlength\parindent{0pt}
+
+% The name at the top of the CV
+\newcommand{\cvname}[1]{
+    \begin{center}
+        \Huge{#1}
+    \end{center}
+}
+
+% Information underneath CV
+\newcommand{\cvinfo}[1]{%
+    \begin{center}%
+        \textcolor[RGB]{80,80,80}{\normalfont{#1}}%
+        \vspace{-10pt}%
+    \end{center}%
+}
+
+\setcounter{secnumdepth}{-1}
+\makeatletter
+\let\old@section\section
+\renewcommand{\section}[2][]{%
+    \old@section[#1]{\textcolor[HTML]{0059B3}{\normalfont{\textsc{#2}}}}%
+    \vspace{-20pt}%
+    \textcolor[RGB]{40,40,40}{\rule{\linewidth}{0.2pt}}%
+    \vspace{5pt}%
+}
+\makeatother
+
+\newenvironment{educationlist}{%
+    \renewcommand{\item}[4]{%
+        {\sc ##1} & {\bfseries ##2} \\
+        \ifstrempty{##3}{}{& { ##3} \\}
+        & {\it ##4} \medskip \\
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
+\newenvironment{awardlist}{%
+    \renewcommand{\item}[4]{%
+        {\sc ##1} & {\bfseries ##2} & \\%{##4}\\
+                  & {\it ##3} & \medskip\\
+    }%
+    \newcommand\subfield[1]{%
+        & {[##1]} & \medskip\\
+    }%
+    \tabularx{\linewidth}{rXl}%
+}%
+{\endtabularx}%
+
+\newenvironment{extralist}{%
+    \renewcommand{\item}[2]{%
+        {\sc ##1} & {##2} \\
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
+\newenvironment{computerlist}{%
+    \renewcommand{\item}[2]{%
+        {\sc ##1} & {##2} \medskip\\
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
+\newenvironment{experiencelist}{%
+    % \newcommand*\inskip{}
+    \renewcommand{\item}[4]{%
+        % \inskip%
+        {\Large\it ##3 \\}%
+        {\sc{##2}\hfill{##1} \medskip\\}%
+        {##4}%
+        \vspace{20pt}%
+        % \renewcommand\inskip{\bigskip}%
+    }
+}
+{\bigskip}
