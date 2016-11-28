@@ -8,9 +8,13 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 
-\definecolor{link}{HTML}{506060} % Hyperlinks
-\hypersetup{colorlinks,breaklinks,urlcolor=link,linkcolor=link}
+\definecolor{link}{HTML}{0059B3} % Hyperlinks
+\hypersetup{pageanchor=false,colorlinks,breaklinks,urlcolor=link,linkcolor=link}
 \setlength\parindent{0pt}
+\pagenumbering{gobble}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
 
 % The name at the top of the CV
 \newcommand{\cvname}[1]{
@@ -88,3 +92,40 @@
     }
 }
 {\bigskip}
+
+\newcommand{\academicsection}[2]{\bfseries{#1}\normalfont{%
+    \begin{changemargin}{0pt}{0pt}%
+        #2
+    \end{changemargin}%
+}}
+
+\newenvironment{academiclist}{%
+    \renewcommand{\item}[3]{%
+        {\sc ##1} & {##2}\\
+                  & {\textit{##3}}\medskip\\
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
+\newenvironment{coursenotelist}{%
+    \renewcommand{\item}[3]{%
+        {\sc ##1} & {\textit{##2}}\\
+        \ifstrempty{##3}{}{& {##3} \medskip\\}
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
+\newenvironment{paperlist}{%
+    \renewcommand{\item}[4]{%
+        {\sc ##1} & {\textit{##2}}\\
+        & {##3}\ifstrempty{##4}{\medskip}{}\\
+        \ifstrempty{##4}{}{& {##4} \medskip\\}
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
+
+\newcommand{\latestrevisionfooter}{{\vfill\hfill\footnotesize Updated editions of this CV available at }}
