@@ -110,8 +110,8 @@
 
 \newenvironment{coursenotelist}{%
     \renewcommand{\item}[3]{%
-        {\sc ##1} & {\textit{##2}}\\
-        \ifstrempty{##3}{}{& {##3} \medskip\\}
+        {\sc ##1} & {\textit{##2}} \hfill{##3}\\
+        %\ifstrempty{##3}{}{& {##3} \medskip\\}
     }%
     \tabularx{\linewidth}{rX}%
 }%
