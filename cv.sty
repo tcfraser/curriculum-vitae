@@ -1,4 +1,4 @@
-\usepackage[hmargin=1.25cm,vmargin=1.25cm]{geometry}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
 \usepackage{bookman}
 \usepackage[T1]{fontenc}
 \usepackage{etoolbox}
@@ -8,8 +8,7 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 
-\definecolor{link}{HTML}{0059B3} % Hyperlinks
-\hypersetup{pageanchor=false,colorlinks,breaklinks,urlcolor=link,linkcolor=link}
+\hypersetup{pageanchor=false,breaklinks}
 \setlength\parindent{0pt}
 \pagenumbering{gobble}
 
@@ -26,8 +25,8 @@
 % Information underneath CV
 \newcommand{\cvinfo}[1]{%
     \begin{center}%
-        \textcolor[RGB]{80,80,80}{\normalfont{#1}}%
-        \vspace{-10pt}%
+        \normalfont{#1}%
+        \vspace{-8pt}%
     \end{center}%
 }
 
@@ -35,16 +34,16 @@
 \makeatletter
 \let\old@section\section
 \renewcommand{\section}[2][]{%
-    \old@section[#1]{\textcolor[HTML]{0059B3}{\normalfont{\textsc{#2}}}}%
+    \old@section[#1]{\normalfont{\textsc{#2}}}%
     \vspace{-20pt}%
-    \textcolor[RGB]{40,40,40}{\rule{\linewidth}{0.2pt}}%
+    \rule{\linewidth}{0.2pt}%
     \vspace{5pt}%
 }
 \makeatother
 
 \newenvironment{educationlist}{%
     \renewcommand{\item}[4]{%
-        {\sc ##1} & {\bfseries ##2} \\
+        {\sc ##1} & { ##2} \\
         \ifstrempty{##3}{}{& { ##3} \\}
         & {\it ##4} \medskip \\
     }%
@@ -52,9 +51,21 @@
 }%
 {\endtabularx}%
 
+\newenvironment{teachinglist}{%
+    \renewcommand{\item}[4]{%
+        {\sc ##1} & { ##2} & \\%{##4}\\
+                  & {\it ##3} & \medskip\\
+    }%
+    \newcommand\subfield[1]{%
+        & {[##1]} & \medskip\\
+    }%
+    \tabularx{\linewidth}{rXl}%
+}%
+{\endtabularx}%
+
 \newenvironment{awardlist}{%
     \renewcommand{\item}[4]{%
-        {\sc ##1} & {\bfseries ##2} & \\%{##4}\\
+        {\sc ##1} & { ##2} & \\%{##4}\\
                   & {\it ##3} & \medskip\\
     }%
     \newcommand\subfield[1]{%
