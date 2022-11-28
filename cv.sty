@@ -1,4 +1,4 @@
-\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage[hmargin=1in,vmargin=0.9in]{geometry}
 \usepackage{bookman}
 \usepackage[T1]{fontenc}
 \usepackage{etoolbox}
@@ -26,7 +26,7 @@
 \newcommand{\cvinfo}[1]{%
     \begin{center}%
         \normalfont{#1}%
-        \vspace{-8pt}%
+        \vspace{-9pt}%
     \end{center}%
 }
 
@@ -34,6 +34,7 @@
 \makeatletter
 \let\old@section\section
 \renewcommand{\section}[2][]{%
+    \vspace{-2em}
     \old@section[#1]{\normalfont{\textsc{#2}}}%
     \vspace{-20pt}%
     \rule{\linewidth}{0.2pt}%
@@ -42,6 +43,16 @@
 \makeatother
 
 \newenvironment{educationlist}{%
+    \renewcommand{\item}[4]{%
+        {\sc ##1} & { ##2} \\
+        \ifstrempty{##3}{}{& { ##3} \\}
+        & {\it ##4} \medskip \\
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
+\newenvironment{experiencelist}{%
     \renewcommand{\item}[4]{%
         {\sc ##1} & { ##2} \\
         \ifstrempty{##3}{}{& { ##3} \\}
@@ -91,19 +102,6 @@
 }%
 {\endtabularx}%
 
-\newenvironment{experiencelist}{%
-    % \newcommand*\inskip{}
-    \renewcommand{\item}[4]{%
-        % \inskip%
-        {\Large\it ##3 \\}%
-        {\sc{##2}\hfill{##1} \medskip\\}%
-        {##4}%
-        \vspace{20pt}%
-        % \renewcommand\inskip{\bigskip}%
-    }
-}
-{\bigskip}
-
 \newcommand{\academicsection}[2]{\bfseries{#1}\normalfont{%
     \begin{changemargin}{0pt}{0pt}%
         #2
@@ -121,7 +119,7 @@
 
 \newenvironment{coursenotelist}{%
     \renewcommand{\item}[3]{%
-        {\sc ##1} & {\textit{##2}} \hfill{##3}\\
+        {\sc ##1} & {``\textit{##2}''} \hfill{##3}\\
         %\ifstrempty{##3}{}{& {##3} \medskip\\}
     }%
     \tabularx{\linewidth}{rX}%
@@ -130,8 +128,8 @@
 
 \newenvironment{paperlist}{%
     \renewcommand{\item}[4]{%
-        {\sc ##1} & {\textit{##2}}\\
-        & {##3}\ifstrempty{##4}{\medskip}{}\\
+        {##1} & {##2}\\
+        & {\textit{##3}}\ifstrempty{##4}{\medskip}{}\\
         \ifstrempty{##4}{}{& {##4} \medskip\\}
     }%
     \tabularx{\linewidth}{rX}%
