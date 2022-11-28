@@ -1,0 +1,47 @@
+% Letter class
+\documentclass[10pt]{letter}
+\usepackage[hmargin=1.5in,vmargin=1.5in]{geometry}
+
+% Name of sender
+\name{Thomas C. Fraser}
+
+% Signature of sender
+\signature{Thomas C. Fraser}
+
+% Address of sender
+\address
+{
+    \textbf{Thomas C. Fraser} \\
+    tfraser@perimeterinstitute.ca\\
+    +1 (226) 868-0557\\
+    Perimeter Institute for Theoretical Physics,\\
+    31 Caroline St N, Waterloo, Ontario N2L 2Y5, Canada
+}
+
+
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+% Name and address of receiver
+\begin{letter}
+{
+    Important Person,\\
+    The Shop Around The Corner,\\
+    Small Corner, NYC.
+}
+
+% Opening statement
+\opening{Dear Important Person,}
+
+% Letter body
+
+Blah blah blah.
+
+Please hire me.
+
+% Closing statement
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}

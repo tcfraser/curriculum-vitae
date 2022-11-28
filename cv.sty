@@ -1,5 +1,5 @@
-\usepackage[hmargin=1in,vmargin=0.9in]{geometry}
-\usepackage{bookman}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+%\usepackage{bookman}
 \usepackage[T1]{fontenc}
 \usepackage{etoolbox}
 \usepackage{hyperref}
@@ -17,9 +17,9 @@
 
 % The name at the top of the CV
 \newcommand{\cvname}[1]{
-    \begin{center}
-        \Huge{#1}
-    \end{center}
+    {\Huge{\textbf{#1}}}\vspace{0.5em}\\
+    {\Large{\textit{Curriculum Vitae}}}\\
+    \today
 }
 
 % Information underneath CV
@@ -34,13 +34,22 @@
 \makeatletter
 \let\old@section\section
 \renewcommand{\section}[2][]{%
-    \vspace{-2em}
-    \old@section[#1]{\normalfont{\textsc{#2}}}%
-    \vspace{-20pt}%
-    \rule{\linewidth}{0.2pt}%
+    \vspace{-1em}
+    \old@section[#1]{\normalfont{\textbf{\textsc{#2}}}}%
+    \vspace{-15pt}%
+    \rule{\linewidth}{0.5pt}%
     \vspace{5pt}%
 }
 \makeatother
+
+\newenvironment{personallist}{%
+    \renewcommand{\item}[2]{%
+        {\sc ##1} & {##2} \\
+    }%
+    \tabularx{\linewidth}{rX}%
+}%
+{\endtabularx}%
+
 
 \newenvironment{educationlist}{%
     \renewcommand{\item}[4]{%
@@ -54,7 +63,7 @@
 
 \newenvironment{experiencelist}{%
     \renewcommand{\item}[4]{%
-        {\sc ##1} & { ##2} \\
+        {\sc ##1} & {\it ##2} \\
         \ifstrempty{##3}{}{& { ##3} \\}
         & {\it ##4} \medskip \\
     }%
@@ -76,8 +85,8 @@
 
 \newenvironment{awardlist}{%
     \renewcommand{\item}[4]{%
-        {\sc ##1} & { ##2} & \\%{##4}\\
-                  & {\it ##3} & \medskip\\
+        {\sc ##1} & {\it ##2} & \\%{##4}\\
+                  & { ##3} & \medskip\\
     }%
     \newcommand\subfield[1]{%
         & {[##1]} & \medskip\\
@@ -117,19 +126,11 @@
 }%
 {\endtabularx}%
 
-\newenvironment{coursenotelist}{%
-    \renewcommand{\item}[3]{%
-        {\sc ##1} & {``\textit{##2}''} \hfill{##3}\\
-        %\ifstrempty{##3}{}{& {##3} \medskip\\}
-    }%
-    \tabularx{\linewidth}{rX}%
-}%
-{\endtabularx}%
 
 \newenvironment{paperlist}{%
     \renewcommand{\item}[4]{%
         {##1} & {##2}\\
-        & {\textit{##3}}\ifstrempty{##4}{\medskip}{}\\
+        & {\textit{``##3''}}\ifstrempty{##4}{\medskip}{}\\
         \ifstrempty{##4}{}{& {##4} \medskip\\}
     }%
     \tabularx{\linewidth}{rX}%
