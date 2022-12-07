@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\usepackage[hmargin=0.75in,vmargin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
+% \usepackage[T1]{fontenc}       % code for pdf file  %!!!!!!!!!!!!!!!!!!!!
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{25pt}
+\pagestyle{fancy}
+
+\lhead{October 12th, 2018 \\ Postgraduate Scholarships-Doctoral PGS D}
+\rhead{Thomas C. Fraser \\ NSERC PIN: 543070}
+
+\usepackage[
+    backend=biber,
+    style=nature,
+    % citestyle=authortitle,
+    % natbib=true,
+    % url=false,
+    % doi=false,
+    % eprint=false,
+    % natbib=true,
+    sorting=none,
+]{biblatex}
+\addbibresource{references.bib}
+
+\begin{document}
+\begin{center}
+    \textbf{Outline of Proposed Research} \\
+    \textit{Applications for Recent Innovations in Causal Inference}
+\end{center}
+
+% ** WHAT IS CAUSAL INFERENCE, HOW AND WHY IS IT SO UBIQUITOUS?
+Causal inference is concerned with drawing conclusions from observed data about the cause-effect structure underlying that data. Contemporary causal inference is based on a general framework pioneered by J. Pearl which utilizes graphical modelling in order to predict the consequences of interventions, compute counterfactual probabilities and identify causal intermediaries\footfullcite{Pearl_2009}. Unsurprisingly, the methodology behind causal inference can be found in myriad of scientific disciplines including quantum foundations, epidemiology, machine learning, economic modelling and biological systems\footfullcite{Wood_2012,Pearl_2009}.
+
+One striking disparity between classical and quantum theories of nature is that some statistics predicted by quantum theory fail to be accommodated within Pearl's framework for causality\footfullcite{Wood_2012}. Consequently, two research programs have emerged to reconcile this issue. The first program aims to supplant Pearl's framework with a characteristically \textit{quantum} causal framework. The second program uses \textit{classic} causal inference to understand precisely the boundaries between classical and quantum correlations to ultimately discover and certify new quantum information technologies. A recent, momentous development for the field was the conception of the Inflation technique\footfullcite{Wolfe_2016}, consisting of a family of methods for solving causal inference problems wherein a subset of statistical variables are latent due to experimental, economic, environmental, or ethical limitations.
+
+Heretofore, these innovations have been applied, rather successfully, to study genuinely quantum phenomena\footfullcite{Fraser_2018}. The fundamental purpose of this research project is to answer the following important question: how can these newly developed techniques be applied to problems \textit{outside} the field of quantum information and quantum foundations? This research proposal aims to resolve this question by first conducting an extensive research survey of modern applications for causal inference. Afterwards, as these techniques are applied to a variety of fields, new computational and conceptual challenges will inevitably arise. I intend to overcome these challenges by improving implementations of the Inflation Technique in numerous ways; for example, by exploiting internal symmetries, using sparse semi-definite programming, and taking advantage of a distributed computing architecture. As a byproduct, this research will produce and publish an extensive, well-documented library of computational tools for other researchers to use at their leisure.
+
+Afterwards, there are numerous long term problems this project will be well-suited to tackle: how to determine when two distinct causal hypotheses are observationally indistinguishable; investigating connections between the Inflation technique and non-linear quantifier elimination methods; computing better bounds on the cardinalities of latent variables necessary for reproducing certain correlations; and finally, to apply these methods to candidate frameworks for quantum causality.
+
+In summary, attempting to reconcile quantum theory with traditional frameworks for causality has indirectly led to the development of innovative causal inference techniques. Currently, these techniques have not been applied outside the field in which they were originally conceived, and yet it is anticipated that these techniques will be directly utilized by a variety of scientific disciplines. This project intends to initiate an organized search for new applications for these techniques and to overcome any additional computational and conceptual challenges that arise.
+\end{document}
