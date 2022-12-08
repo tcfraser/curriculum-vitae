@@ -1,12 +1,12 @@
 % Letter class
-\documentclass[10pt]{letter}
-\usepackage[hmargin=1.5in,vmargin=1.5in]{geometry}
+\documentclass[12pt]{letter}
+\usepackage[hmargin=1.25in,vmargin=1.25in]{geometry}
 \usepackage{graphicx}
 \usepackage{braket}
 
 \usepackage[
     backend=biber,
-    style=nature,
+    style=authoryear,
     % citestyle=authortitle,
     % natbib=true,
     % url=false,
@@ -28,11 +28,8 @@
 {
     \textbf{Thomas C. Fraser} \\
     tfraser@perimeterinstitute.ca\\
-    +1 (226) 868-0557\\
-    Perimeter Institute for Theoretical Physics,\\
-    31 Caroline St N, Waterloo, Ontario N2L 2Y5, Canada
+    +1 (226) 868-0557
 }
-
 
 %-----------------------------------------------------------------------------%
 
@@ -41,67 +38,72 @@
 % Name and address of receiver
 \begin{letter}
 {
-    E. Wolfe, R. Spekkens \& The Postdoc Hiring Committee,\\
+    E. Wolfe, R. W. Spekkens \& The Postdoc Hiring Committee,\\
     Perimeter Institute for Theoretical Physics,\\ 
     31 Caroline St N, Waterloo, Ontario N2L 2Y5, Canada.
 }
 
-\opening{For the Postdoc Hiring Committee at PI:}
+\opening{To the Postdoc Hiring Committee at PI:}
 
-I am writing to express my interest in re-joining the research group of E. Wolfe and R. Spekkens as post-doctoral student to work on the ``Quantum Causal Inference Initiative''.
-In the interest of disclosing any potential conflicts of interest, I wish to inform you that I am currently a PhD Candidate working under the supervision of R. Spekkens in the Quantum Foundations group at PI and I will be graduating April of 2023.
-I have also collaborated directly with E. Wolfe in the past.
+I am writing to express my interest in joining the research group of E. Wolfe and R. W. Spekkens as a post-doctoral student to work on the ``Quantum Causal Inference Initiative''.
+I am currently a PhD Candidate under the supervision of R. W. Spekkens in the Quantum Foundations group at PI and I expect to graduate April of 2023.
 
 \noindent\makebox[\linewidth]{\rule{6cm}{0.4pt}}
 
-Dear E. Wolfe, R. Spekkens,
+\textbf{Causal Modelling and Quantum Foundations}
 
-For a variety technological, ethical, environmental, or fundamental reasons, scientists are often limited in their ability to interact with and collect empirical data about the complex, multipartite systems they care about. Despite these limitations, it remains possible to make inferences about the causal relations governing the various parts of the whole system.
+For a variety of reasons, scientists are typically limited in their ability to interact with and collect empirical data about the complex, multipartite systems they care about.
+It is therefore necessary to develop tools which can make inferences about the structure of the whole system in the presence of partial information, and to furthermore characterize the intrinsic limitations of these tools.
 
+Causal modelling, which is concerned with the structure of causal relationships between various subsystems, is a prominent example of such a tool. In recent years, causal modelling has has proven to be a valuable tool to the field of quantum foundations as it provides a framework for clarifying the fundamental differences between classical and quantum correlations~\parencite{wood2015lesson}.
 
+\textbf{Past Research}
 
-The quantum marginal problem (QMP) and the problem of quantum causal modelling (QCM) and closely related. 
-For example, it is well-understood that a tripartite quantum state, $\rho_{ABC}$, is consistent with the causal hypothesis that system $B$ is the complete common cause of $A$ and $C$, depicted by $A \leftarrow B \rightarrow C$, if and only if its quantum conditional mutual information $I(A, C | B)$ vanishes \cite{allen2017quantum}. This condition is also equivalent to the condition that $\rho_{ABC}$ can be decomposed by splitting system $B$ such that \cite{hayden2004structure}
-\begin{equation}
-    \rho_{ABC} \cong {\bigoplus}_{i} p_i (\rho_{AB_i^{L}} \otimes \rho_{B_i^{R} C}).
-    \nonumber
-\end{equation}
-At the level of the QMP, this condition stipulates that the tripartite state $\rho_{ABC}$ can be \textit{reconstructed} from the two-body marginals $\rho_{AB}$ and $\rho_{BC}$.
+I began my academic journey working with E. Wolfe on applying the Inflation technique~\parencite{wolfe2019inflation} to a particular causal structure involving a triple of pair-wise common causes called the triangle scenario~\parencite{fraser2018causal}. In that project, we derived inequalities necessarily satisfied by correlations achievable using classical common causes that are additionally violable by correlations achievable using quantum common causes, thus providing further evidence for the utility of causal modelling in quantum foundations. Afterwards, I developed a combinatorial approach to the problem of classical causal compatibility which is capable of generating a complete hierarchy of inner approximations for the space of compatible correlations~\parencite{fraser2020combinatorial}, complementing the outer approximations offered by the Inflation technique.
 
- the Inflation Technique has proven to be a promising tool for understanding the observational consequences of a given causal hypothesis \cite{wolfe2019inflation}.
+As a result of these experiences, it became clear to me that developing tools for quantum causal modelling would be a natural next step. 
+Given that solving the classical marginal problem is a critical step for the Inflation technique, I became interested in tackling the analogous problem for quantum states known as the quantum marginal problem.
+In addition to its connection with quantum causal models, there are well-established connections between the quantum marginal problem and other topics such as quantum many-body physics, quantum error correction, quantum entanglement and quantum entropic inequalities. 
 
+Over the last two decades, tremendous progress has been made toward solving the quantum marginal problem for the special case of disjoint subsystems~\parencite{klyachko2006quantum}. These advances were made possible by deep connections between representation theory and convex geometry~\parencite{walter2013entanglement}. Unfortunately, the kinds of marginal problems encountered in causal modelling typically involve marginals pertaining to overlapping subsystems and thus new insights would be needed to make progress.
 
-Unsurprisingly, the QMP is connected to numerous topics in quantum information theory including quantum entanglement, quantum many-body physics, quantum error correction, quantum entropic inequalities, random matrix theory, and representation theory.
+In my most recent paper~\parencite{fraser2022sufficient}, I managed to construct a hierarchy of necessary inequalities for the compatibility of an arbitrary collection of quantum marginals. Furthermore, using quantum state estimation techniques~\parencite{keyl2006quantum}, I proved the sufficiency of this hierarchy. While there are numerous potential applications of these tools, I am most eager to apply them to problems related to quantum causal modelling.
 
-For these reasons,
-\cite{fraser2022sufficient}
+\textbf{Future Research}
 
+One immediate application for the results of my recent paper to the topic of quantum causal modelling, at least under the assumption of known (but arbitrary) Hilbert space dimension for latent sources, is to construct an analogous convergent hierarchy of necessary inequalities for the compatibility of a tripartite quantum state with the quantum triangle scenario. Using existing results from the representation theories of the symmetric and unitary groups, it might be possible to analytically evaluate these constraints for large degree.
 
-The primary focus of my Master's thesis~\cite{fraser2020combinatorial} was the subject of \textit{classical} causal inference. The was to switch from using tools from real algebraic geometry (e.g. non-linear quantifier elimination) to tools from combinatorics.
+Additionally, while techniques developed for the quantum marginal problem are applicable to problems in quantum causal modelling, the reverse is also true: results from quantum causal modelling can be applied to the quantum marginal problem. 
+To demonstrate this, consider that a tripartite quantum state, $\rho_{ABC}$, is compatible with the causal hypothesis that system $B$ is the complete common cause of $A$ and $C$, if and only if its quantum conditional mutual information vanishes~\parencite{allen2017quantum}. 
+This condition is also equivalent to the condition that $\rho_{ABC}$ can be decomposed by splitting system $B$ such that $\rho_{ABC} \cong {\bigoplus}_{i} p_i (\rho_{AB_i^{L}} \otimes \rho_{B_i^{R} C})$~\parencite{hayden2004structure}. 
+At the level of the quantum marginal problem, this condition implies that the tripartite state $\rho_{ABC}$ can be uniquely reconstructed from its two-body marginals $\rho_{AB}$ and $\rho_{BC}$~\parencite{zhang2013conditional}, which in turn, constitutes a sufficient condition for the compatibility of $\rho_{AB}$ and $\rho_{BC}$.
 
-Another topic I'm eager to work on is causal inference starting from only marginal information~\cite{budroni2016indistinguishability}. In this restricted setting, it is also possible to prove quantum advantages for causal inference in a similar spirit to those of \cite{ried2015quantum}.
-
-For example, starting from a pair of marginal distributions, $p_{AB}$ and $q_{BC}$ (for which $p_{B} = q_{B}$), it is impossible to distinguish between (i) the causal hypothesis that $B$ is the complete common cause of $A$ and $C$, and (ii) any saturating causal hypothesis, e.g., the hypothesis that a fourth system, $\Lambda$, is the complete common cause of $A$, $B$ and $C$.
+A direct consequence of this observation is a form of quantum advantage for causal inference (in a similar spirit to \parencite{ried2015quantum}), albeit in the restricted setting of causal inference starting from only marginal information~\parencite{budroni2016indistinguishability}.
+Given any compatible pair of classical marginal distributions, $p_{AB}$ and $p_{BC}$, it is impossible to distinguish between (i) the causal hypothesis that $B$ is the complete common cause of $A$ and $C$, and (ii) any saturating causal hypothesis, e.g., the hypothesis that a fourth system, $\Lambda$, is the complete common cause of $A$, $B$ and $C$.
+\vspace{-1em}
 \begin{center}
     \includegraphics[scale=0.25]{common_cause_direct_cause}
 \end{center}
-The reason for this is simply that probability distributions are \textit{adhesive} in the sense that there always exists a joint distribution,
-\begin{equation}
-    r_{ABC}(abc) = \frac{p_{AB}(ab) q_{BC}(bc)}{p_{B}(b)},
-\end{equation}
-that is both compatible with hypothesis (i) and has marginal distributions $p_{AB}$ and $q_{BC}$. 
-By contrast, from a pair of marginal quantum states, $\rho_{AB}$ and $\sigma_{BC}$ (for which $\rho_{B} = \sigma_{B}$), it is \textit{possible} to distinguish causal hypotheses (i) from (ii). For example, it is possible to show that there exists no tripartite quantum state compatible with causal hypothesis (i) that also has bipartite marginals $\rho_{AB} = \sigma_{BC} = \frac{1}{3}\ket{00}\bra{00} + \frac{2}{3} \left(\frac{\ket{01}+\ket{10}}{\sqrt{2}}\right)\left(\frac{\bra{01}+\bra{10}}{\sqrt{2}}\right)$ \cite{zhang2013conditional}.
+\vspace{-1em}
+The reason for this indistinguishability is simply that there always exists a joint probability distribution, defined by $q_{ABC}(a,b,c) = p_{AB}(a,b)p^{-1}_{B}(b) p_{BC}(b,c)$, that is both compatible with hypothesis (i) and has marginal distributions $p_{AB}$ and $p_{BC}$.
+This universal property of probability distributions is termed ``adhesivity'' in~\parencite{budroni2016indistinguishability}.
 
+In contrast, given a compatible pair of marginal quantum states, $\rho_{AB}$ and $\rho_{BC}$, it is sometimes possible to distinguish causal hypothesis (i) from (ii). 
+For instance, it can be shown that no tripartite quantum state compatible with causal hypothesis (i) has the bipartite marginals $\rho_{AB} = \rho_{BC} = \frac{1}{3}\ket{00}\bra{00} + \frac{2}{3} \left(\frac{\ket{01}+\ket{10}}{\sqrt{2}}\right)\left(\frac{\bra{01}+\bra{10}}{\sqrt{2}}\right)$. 
+However, the $W$-state, $\ket{W}_{ABC} = \frac{1}{\sqrt{3}}(\ket{001} + \ket{010} + \ket{100})$, which has the aforementioned bipartite marginals, is evidently compatible with causal hypothesis (ii).
 
+More generally, it is worth investigating the distinguishability relations between causal models in the presence of only marginal information and to identify examples of discrepancies between classical and quantum causal models analogous to the above example.
 
-
+In conclusion, there are a number of connections between the quantum marginal problem and quantum causal modelling worth investigating. Given my previous experiences working on both topics, I believe I am uniquely qualified to investigate these connections further.
 
 % Closing statement
 \closing{Sincerely,}
 
-\end{letter}
 
 \textbf{References}
 \printbibliography[heading=none]{}
+
+
+\end{letter}
 
 \end{document}
