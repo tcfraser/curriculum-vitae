@@ -1,0 +1,47 @@
+% Letter class
+\documentclass[10pt]{letter}
+\usepackage[hmargin=1.5in,vmargin=1.5in]{geometry}
+
+% Name of sender
+\name{Thomas C. Fraser}
+
+% Signature of sender
+\signature{Thomas C. Fraser}
+
+% Address of sender
+\address
+{
+    \textbf{Thomas C. Fraser} \\
+    tcf@math.ku.dk\\
+    +45 81 94 61 22\\
+    University of Copenhagen, Department of Mathematics,\\
+    QMath, Vibenshuset, Lyngbyvej 2, 2100 Copenhagen
+}
+
+
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+% Name and address of receiver
+\begin{letter}
+{
+    Important Person,\\
+    The Shop Around The Corner,\\
+    Small Corner, NYC.
+}
+
+% Opening statement
+\opening{Dear Important Person,}
+
+% Letter body
+
+Blah blah blah.
+
+Please hire me.
+
+% Closing statement
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}
