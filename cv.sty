@@ -16,12 +16,11 @@
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist
 
-% The name at the top of the CV
-\newcommand{\cvname}[1]{\nameheader{#1}{Curriculum Vitae}}
-\newcommand{\nameheader}[2]{
-    {\Huge{\textbf{#1}}}\vspace{0.5em}\\
-    {\Large{\textit{#2}}}\\
-    \today
+% The name at the top of the CV, with an optional date on the right.
+\newcommand{\cvname}[2][]{\nameheader[#1]{#2}{Curriculum Vitae}}
+\newcommand{\nameheader}[3][]{
+    {\Huge{\textbf{#2}}}\hfill{\scshape #1}\vspace{0.5em}\\
+    {\Large{\textit{#3}}}\par
 }
 % Information underneath CV
 \newcommand{\cvinfo}[1]{%
@@ -107,7 +106,7 @@
 }%
 {\endtabularx}%
 
-\newenvironment{computerlist}{%
+\newenvironment{skillslist}{%
     \renewcommand{\item}[2]{%
         {\sc ##1} & {##2} \medskip\\
     }%
