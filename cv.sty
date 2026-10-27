@@ -52,25 +52,28 @@
 {\endtabularx}%
 
 
-\newenvironment{educationlist}{%
-    \renewcommand{\item}[4]{%
-        {\sc ##1} & { ##2} \\
-        \ifstrempty{##3}{}{& { ##3} \\}
-        & {##4} \medskip \\
+\makeatletter
+% The date shares the title's first line; details span the full block width.
+\newcommand{\cv@dateditem}[4]{%
+    {#2} & {\scshape #1} \\
+    \ifstrempty{#3}{}{%
+        \multicolumn{2}{p{\dimexpr\linewidth-2\tabcolsep\relax}}{#3} \\
     }%
-    \tabularx{\linewidth}{rX}%
+    \multicolumn{2}{p{\dimexpr\linewidth-2\tabcolsep\relax}}{#4\medskip} \\
+}
+
+\newenvironment{educationlist}{%
+    \let\item\cv@dateditem
+    \tabularx{\linewidth}{Xr}%
 }%
 {\endtabularx}%
 
 \newenvironment{experiencelist}{%
-    \renewcommand{\item}[4]{%
-        {\sc ##1} & {##2} \\
-        \ifstrempty{##3}{}{& { ##3} \\}
-        & {##4} \medskip \\
-    }%
-    \tabularx{\linewidth}{rX}%
+    \let\item\cv@dateditem
+    \tabularx{\linewidth}{Xr}%
 }%
 {\endtabularx}%
+\makeatother
 
 \newenvironment{teachinglist}{%
     \renewcommand{\item}[4]{%
